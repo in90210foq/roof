@@ -35,7 +35,7 @@ def youtube_search(options):
     if search_result["id"]["kind"] == "youtube#video":
       #videos.append("%s (%s)" % (search_result["snippet"]["title"],
       #                           search_result["id"]["videoId"]))
-      videos.append("https://www.youtube.com/watch?v=%s" % (search_result["id"]["videoId"]))
+      videos.append("youtube-dl -f \"best[height<=?720]\" https://www.youtube.com/watch?v=%s" % (search_result["id"]["videoId"]))
     elif search_result["id"]["kind"] == "youtube#channel":
       channels.append("%s (%s)" % (search_result["snippet"]["title"],
                                    search_result["id"]["channelId"]))
